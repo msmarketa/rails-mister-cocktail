@@ -15,15 +15,29 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.new(cocktail_params)
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
+        # to see the one just created
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+    @cocktail = Cocktail.find(params[:id])
+    @cocktail.destroy
+    redirect_to cocktails_path
   end
 
 private
 
   def cocktail_params
     params.require(:cocktail).permit(:name)
+            # .permit(:name, :ingredient_ids => []) if we wanted to pass more ids
   end
 
 end
