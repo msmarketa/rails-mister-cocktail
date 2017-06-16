@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   # it's to avoid deep nesting
 
   mount Attachinary::Engine => "/attachinary"
+
+  root to: 'cocktails#index'
 end
