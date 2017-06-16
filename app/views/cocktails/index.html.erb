@@ -1,6 +1,5 @@
 <h1>Cocktails</h1>
-<p><%= link_to 'Add new cocktail', new_cocktail_path %></p>
-<ul>
+<!-- <ul>
 <% @cocktails.each do |c| %>
   <li>
   <%= c.name %> |
@@ -11,5 +10,20 @@
   <% end %>
   </li>
 <% end %>
-</ul>
+</ul> -->
 
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |c| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 60%),
+         url('<% if c.photo? %><%= cl_image_path c.photo.path, height: 300, width: 400, crop: :fill %><% end %>'); background-position: center">
+          <%= c.name %> |
+          <%= link_to 'Details', cocktail_path(c) %> |
+          <%= link_to 'Delete', c, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <br>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

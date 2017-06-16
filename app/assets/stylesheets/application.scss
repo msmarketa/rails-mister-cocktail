@@ -13,3 +13,18 @@
 @import "layout/index";
 @import "components/index";
 @import "pages/index";
+
+
+a, a:visited, a:active {
+  color: #EA2E66;
+}
+
+a:hover {
+  color: #B371AC;
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 25px;
+  text-align: center;
+}
