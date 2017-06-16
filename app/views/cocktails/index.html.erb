@@ -6,6 +6,9 @@
   <%= c.name %> |
   <%= link_to 'Details', cocktail_path(c) %> |
   <%= link_to 'Delete', c, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% if c.photo? %>
+    <%= cl_image_tag c.photo.path, width: 200, height: 300, crop: :fill %>
+  <% end %>
   </li>
 <% end %>
 </ul>

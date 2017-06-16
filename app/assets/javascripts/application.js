@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require cloudinary/jquery.cloudinary
+//= require attachinary
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require turbolinks

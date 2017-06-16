@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   resources :doses, only: [:destroy]
   # it's to avoid deep nesting
+
+  mount Attachinary::Engine => "/attachinary"
 end
